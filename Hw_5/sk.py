@@ -12,6 +12,8 @@ pasos
 	b. graficar
 7. chi 2
 """
+import numpy as np
+import matplotlib as plt
 """
 Functions for exercise 1 hw 5
 Author: Juan Estupiñán
@@ -24,7 +26,10 @@ def getdata (filename):
     in: filename
     out: numpyarray with the data
     """
-    return
+    n = 10;
+    m = 100;
+    data = np.ones((n,m))
+    return data
 
     
 def getcolumn(data, n):
@@ -35,7 +40,8 @@ def getcolumn(data, n):
         n the column wanted
     out: ndarray column (single electrode data)
     """
-    return
+    column = data[:,n]
+    return column
 
 
 def fouriercol (electrode, x):
@@ -47,7 +53,11 @@ def fouriercol (electrode, x):
     out: ndarray FFT_x fourier transform  
          ndarray frecx frecuencies
     """
-    return
+    n  = 10 #length of array
+    dt = 10 #samples
+    FFT_x = fft(electrode) / n
+    frecx = fftfreq(n, dt) 
+    return FFT_x, frecx
 
 
 def espectrop(FFT_x):
@@ -57,7 +67,7 @@ def espectrop(FFT_x):
     in: ndarray FFT, 
     out: ndarray squared norm of all the components of FFT
     """
-    return
+    return FFT_x
 
 
 def searchmax (sqnorm, Frecx):
@@ -69,7 +79,9 @@ def searchmax (sqnorm, Frecx):
     out: ndarray of 10 max norms
          ndarray of 10 frecuencies, corresponding to the positios of the max norms
     """
-    return
+    x = linspace (1,10)
+    y = linspace (1,10)
+    return x, y
 
 def reconstruct (maxnorm, Frecx):
     """
@@ -79,7 +91,8 @@ def reconstruct (maxnorm, Frecx):
         ndarray Frecx
     out: ndarray ReconsSignal the reconstructed signal
     """
-    return
+    x = linspace (1,10)
+    return x
 
 def plotsig (ReconSig, electrode):
     """
@@ -88,6 +101,9 @@ def plotsig (ReconSig, electrode):
     in: ReconSig, the reconstructed signal
         electrode, the original signal
     """
+    plt.plot (ReconSig)
+    plt.plot (electrode)
+    plt.show
 
 def chisq (ReconSig, electrode):
     """
@@ -97,4 +113,4 @@ def chisq (ReconSig, electrode):
         electrode, the original signal
     out: Chi2, the chi squared of a signal
     """
-    return
+    return 0
