@@ -4,10 +4,10 @@ pasos
 2. sacar por columnas
 3. calcular fourier
 4. espectro de potencias
-	a. norma al cuadrado de xmoño
+	a. norma al cuadrado de xmono
 	b. graficar
 5. buscar 10 mayores
-6. reconstrucción de señales a partir de esos
+6. reconstruccion de senales a partir de esos
 	a. fourier inverso
 	b. graficar
 7. chi 2
@@ -16,7 +16,7 @@ import numpy as np
 import matplotlib as plt
 """
 Functions for exercise 1 hw 5
-Author: Juan Estupiñán
+Author: Juan Estupinan
 """
 
 def getdata (filename):
