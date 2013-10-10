@@ -1,21 +1,25 @@
 """1. obtener data
   a. limpiar data i.e. quitar datos con -99.0
-2. interpolación
+2. interpolacion
   a. constante
   b. lineal
   c. cubica
-3. calcular espectro s de potencia i.e. fourier-norma-cuadrado
-4. ver que frecuencia es 20 años y 2 años, borrar los menores a 20 y mayores a 2
+3. calcular espectros de potencia i.e. fourier-norma-cuadrado
+4. ver que frecuencia es 20 anos y 2 anos, borrar los menores a 20 y mayores a 2
 5. con los que queden hacer inverse fourier
 6. normalizar
-7. plot reconstrucción y original
+7. plot reconstruccion y original
 8. estimar periodo solar
 """
 
 """
 Funtions for exercise 2 hw 5
-Author: Juan Estupiñán
+Author: Juan Estupiann
 """
+import numpy as np
+import matplotlib as plt
+import scipy as scy
+
 def getdata (filename):
     """
     get the data given in the filename
@@ -23,7 +27,10 @@ def getdata (filename):
     in: Filename the name of the file
     out:narray data
     """
-    return
+    n = 10;
+    m = 100;
+    data = np.ones((n,m))
+    return data
 
 
 def cleandata(data, x):
@@ -34,7 +41,7 @@ def cleandata(data, x):
     """
 
 
-def interpol(data, x, type):
+def interpol(data, x, tipe):
     """
     do interpolation with the numpy rutines
     in: narray data, cleaned
@@ -42,7 +49,8 @@ def interpol(data, x, type):
         type, the type of the interpolation wanted
     out:intrpl the interpolation wanted
     """
-    return
+    f = interp1t(data, x, kind=tipe)
+    return f
 
 
 def fourier(intrpl, data, x):
@@ -55,6 +63,11 @@ def fourier(intrpl, data, x):
     out: ndarray FFT_x fourier transform
          ndarray frecx frecuencies
     """
+    n  = 10 #length of array
+    dt = 10 #samples
+    FFT_x = fft(data) / n
+    frecx = fftfreq(n, dt) 
+    return FFT_x, frecx
 
 
 def espectrop(FFT_x):
@@ -64,7 +77,7 @@ def espectrop(FFT_x):
     in: ndarray FFT, 
     out: ndarray squared norm of all the components of FFT
     """
-    return
+    return FFT_x
 
 def erased(Frecx, sqnorms):
     """
@@ -84,7 +97,7 @@ def reconstruct (sqnorms, Frecx):
     out: ndarray Recondata the reconstructed data
          ndarray Reconfrec the reconstructed frecuencies
     """
-    return
+    return sqnorms, Frecx
 
 
 def plotdat(Recondata, Reconfrec):
