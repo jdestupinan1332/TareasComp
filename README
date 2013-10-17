@@ -1,4 +1,50 @@
 TareasComp
+Breve informe – preguntas hw_5 (Rutinas FFT)
+
+
+
+
+El espectro de potencias que se obtiene para cada una de las señales en el
+electrograma presenta diferencias en cuanto al rango en el que operan las colas del
+espectro. Presentan bastante similitud en las cercanías del cero; presentan un pico
+destacable, sin embargo, aunque la amplitud de las colas de la curva del espectro es
+similar, no están ubicadas en la misma posición vertical, el espectro de potencias no
+será el mismo en las lejanías del máximo.
+
+La comparación de la señal reconstruída y la original se lleva a cabo mediante el
+uso de la estadística del chi cuadrado. Mediante esta estadística, se puede
+determinar que tanto se ajusta una señal respecto a la otra (la reconstruída a partir de
+las 10 frecuencias más altas en el espacio de frecuencias, respecto a la señal
+original). Se observa que el ajuste es bastante aleatorio, varía desde señales bien
+reconstruídas con un chi cuadrado de 1,45, hasta reconstrucciones muy malas con
+un chi cuadrado de 1560,1. Puede decirse que el valor tan alto de chi cuadrado se
+debe al mal ajuste de las colas alrededor del cero del espectro de la señal en cada
+una. Esto es una consecuencia directa de que para la reconstrucción de la señal se
+están sólo tomando las 10 frecuencias mayores, se está perdiendo bastante
+información descartando las demás por lo que la reconstrucción tendrá una
+aproximación muy vaga.
+Los espectros obtenidos a partir de las observaciones de las manchas del sol en
+tiempos aleatorios para cada interpolación, son relativamente diferentes. Aunque
+presentan la misma tendencia en la curva, especialmente en el centro de la gráfica
+alrededor del cero, se alcanza a observar que hay puntos y por ende picos que
+sobresalen entre ellas y al mismo tiempo no son compartidos. Para la interpolación
+lineal (curva roja), se observa un mayor ruido respecto a las demás interpolaciones.
+Estas diferencias están básicamente dadas por la predicción que hace cada
+interpolación de los puntos (fechas) en los que no fue registrado dato alguno. Es
+diferente la manera como predice una interpolación lineal (empezando por que con
+la función de interpolación lineal, la función de las manchas solares observadas
+respecto al tiempo es no diferenciable) a lo que predice una interpolación cúbica (si
+diferenciable la función resultante). Son este tipo de diferencias lo que hacen que el
+la función de las manchas solares observadas respecto al tiempo no sea el mimo en
+un espacio de frecuencias.
+
+
+Finalmente, con la interpolación lineal se estima un periodo solar de 14,42 años, la
+interpolación constante estima un periodo solar de 18,6 años y la interpolación
+cubica estima un periodo solar de 10,47 años. Sabiendo de estudios previos que el
+periodo solar es aproximadamente 11 años, podría decirse que la interpolación
+cúbica es la que mejor estima el periodo.
+
 ==============================
 
 Tareas para computacional
